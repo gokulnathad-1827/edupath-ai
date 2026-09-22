@@ -32,7 +32,7 @@ public class Student {
     private LocalDate dateOfBirth;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = true)
     private User user;
 
     private String className;

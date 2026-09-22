@@ -24,6 +24,16 @@ public class Teacher {
     @JoinColumn(name = "user_id")
     private User user;
 
+    private String fullName;
+
+    private String email;
+
+    private String phoneNumber;
+
+    private String address;
+
+    private String subject;
+
     private String department;
 
     private String qualification;

@@ -24,7 +24,12 @@ public class JwtService {
     }
 
     public String generateAccessToken(UserDetails userDetails) {
-        return buildToken(new HashMap<>(), userDetails, jwtProperties.getAccessTokenExpiration());
+        Map<String, Object> extraClaims = new HashMap<>();
+        if (userDetails.getAuthorities() != null && !userDetails.getAuthorities().isEmpty()) {
+            String role = userDetails.getAuthorities().iterator().next().getAuthority();
+            extraClaims.put("role", role);
+        }
+        return buildToken(extraClaims, userDetails, jwtProperties.getAccessTokenExpiration());
     }
 
     public String generateRefreshToken(UserDetails userDetails) {

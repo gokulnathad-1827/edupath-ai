@@ -24,6 +24,8 @@ public class Counselor {
     @JoinColumn(name = "user_id")
     private User user;
 
+    private String fullName;
+
     private String qualification;
 
     private String specialization;
@@ -35,6 +37,8 @@ public class Counselor {
     private String status;
 
     private String officeLocation;
+
+    private String address;
 
     private String phoneNumber;
 

@@ -19,6 +19,8 @@ public interface CounselorRepository extends JpaRepository<Counselor, Long> {
 
     Optional<Counselor> findByUserId(Long userId);
 
+    Optional<Counselor> findByEmail(String email);
+
     List<Counselor> findBySpecialization(String specialization);
 
     List<Counselor> findByStatus(String status);

@@ -24,11 +24,24 @@ public class StudentDTO {
     private String parentPhone;
     private String email;
     private String status;
-    private Long userId;
+    private Object userId;
     private Long classTeacherId;
     private String classTeacherName;
     private Long parentId;
     private String parentName;
     private Long counselorId;
     private String counselorName;
+
+    public Long getNumericUserId() {
+        if (userId instanceof Number) {
+            return ((Number) userId).longValue();
+        } else if (userId instanceof String) {
+            try {
+                return Long.parseLong((String) userId);
+            } catch (NumberFormatException e) {
+                return null;
+            }
+        }
+        return null;
+    }
 }

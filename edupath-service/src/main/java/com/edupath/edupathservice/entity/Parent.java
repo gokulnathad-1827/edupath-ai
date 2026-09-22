@@ -23,6 +23,8 @@ public class Parent {
     @JoinColumn(name = "user_id")
     private User user;
 
+    private String fullName;
+
     private String fatherName;
 
     private String motherName;
@@ -30,6 +32,8 @@ public class Parent {
     private String guardianName;
 
     private String occupation;
+
+    private String childName;
 
     private String email;
 
