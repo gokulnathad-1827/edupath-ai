@@ -1,0 +1,38 @@
+# Environment files & Secrets
+.env
+.env.local
+.env.production
+.env.staging
+*.env
+
+# Dependencies & Build artifacts
+node_modules/
+**/node_modules/
+target/
+**/target/
+dist/
+**/dist/
+build/
+**/build/
+
+# Python cache & virtual environments
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# IDE & System files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.user
+*.log
+*.zip
+.classpath
+.project
+.settings/
+.factorypath
+
