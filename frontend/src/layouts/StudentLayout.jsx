@@ -1,0 +1,29 @@
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/common/Navbar';
+import Sidebar from '../components/common/Sidebar';
+import useAuth from '../pages/hooks/useAuth';
+import './StudentLayout.css';
+
+const StudentLayout = () => {
+  const { user } = useAuth();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
+  const closeSidebar = () => setSidebarOpen(false);
+
+  return (
+    <div className="student-layout">
+      <Navbar onToggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
+      <Sidebar role={user?.role} isOpen={sidebarOpen} onClose={closeSidebar} />
+
+      <div className={`student-main ${sidebarOpen ? 'main-shifted' : ''}`}>
+        <main className="student-content">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default StudentLayout;

@@ -1,0 +1,24 @@
+/* =============================================
+   index.css — Base Reset & Body Defaults
+   ============================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+  background: #0a0a14;
+  color: #f0f0ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

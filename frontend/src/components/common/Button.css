@@ -1,0 +1,95 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Sizes */
+.btn-sm  { padding: 8px 16px;  font-size: 0.8125rem; border-radius: var(--radius-sm); }
+.btn-md  { padding: 11px 24px; font-size: 0.9375rem; }
+.btn-lg  { padding: 14px 32px; font-size: 1rem;      border-radius: var(--radius-lg); }
+.btn-full { width: 100%; }
+
+/* ── Variants ──────────────────────────────── */
+
+/* Primary — Cherry bg, Butter text */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* Secondary — Butter bg, Cherry text */
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--primary);
+  border: 1.5px solid var(--border-card);
+}
+.btn-secondary:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-1px);
+}
+
+/* Outline — Cherry border + text, transparent bg */
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary-glow);
+  transform: translateY(-1px);
+}
+
+/* Ghost — subtle border */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border-card);
+}
+.btn-ghost:hover {
+  background: var(--primary-glow);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Danger */
+.btn-danger {
+  background: var(--gradient-danger);
+  color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+.btn-danger:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+/* Icon & Spinner */
+.btn-icon { display: flex; align-items: center; font-size: 1.1em; }
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,237,171,0.4);
+  border-top-color: var(--secondary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
